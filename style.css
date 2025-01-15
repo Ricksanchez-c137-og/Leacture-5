@@ -5,6 +5,7 @@ body {
     background-color: #f4f4f9;
     color: #333;
     line-height: 1.6;
+    animation: fadeIn 1.5s ease-in;
 }
 
 div {
@@ -13,6 +14,12 @@ div {
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
@@ -20,12 +27,14 @@ h1 {
     color: #007bff;
     text-align: center;
     margin-bottom: 10px;
+    animation: slideDown 1s ease-in-out;
 }
 
 h2 {
     font-size: 1.8rem;
     color: #444;
     margin-bottom: 15px;
+    animation: fadeIn 1.5s ease-in;
 }
 
 img {
@@ -33,6 +42,7 @@ img {
     margin: 0 auto;
     border-radius: 50%;
     border: 3px solid #007bff;
+    animation: scaleUp 1.5s ease-in-out;
 }
 
 ul {
@@ -44,12 +54,14 @@ ul {
 ul li {
     font-size: 1rem;
     padding: 5px 0;
+    animation: fadeIn 1.5s ease-in;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    animation: slideUp 1s ease-in-out;
 }
 
 th, td {
@@ -62,25 +74,30 @@ th {
     background: #007bff;
     color: #fff;
     font-size: 1.2rem;
+    animation: fadeIn 1.5s ease-in;
 }
 
 td a {
     color: #007bff;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 td a:hover {
     text-decoration: underline;
+    color: #0056b3;
 }
 
 div a {
     font-size: 1rem;
     color: #007bff;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 div a:hover {
     text-decoration: underline;
+    color: #0056b3;
 }
 
 @media (max-width: 768px) {
@@ -98,5 +115,48 @@ div a:hover {
 
     ul li, td {
         font-size: 0.9rem;
+    }
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
     }
 }
